@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Devfolio</title>
+  <title>Inner Page - iPortfolio Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -60,46 +60,41 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="{% url 'portfolio.list' %}" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="{% url 'home' %}" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="{% url 'home' %}#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="{% url 'home' %}#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="{% url 'home' %}#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="{% url 'home' %}#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="{% url 'home' %}#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li><a href="{% url 'blog' %}" class="nav-link scrollto"><i class="bx bx-note"></i> <span>Blog</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  {% include 'home/home.html' %}
-  <!-- End Hero -->
-
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    {% include 'home/aboutme.html' %}
-    <!-- End About Section -->
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
 
-    <!-- ======= Facts Section ======= -->
-    {% include 'home/facts.html' %}
-    <!-- End Facts Section -->
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfolio</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Portfolio</li>
+          </ol>
+        </div>
 
-    <!-- ======= Skills Section ======= -->
-    {% include 'home/skills.html' %}
-    <!-- End Skills Section -->
+      </div>
+    </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Resume Section ======= -->
-    {% include 'home/resume.html' %}
-    <!-- End Resume Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    {% include 'testimonials/testimonials_list.html' %}
-    <!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    {% include 'home/contactme.html' %}
-    <!-- End Contact Section -->
+    <section class="inner-page">
+      <div class="container">
+            {% block content %}
+            {% endblock %}
+      </div>
+    </section>
 
   </main><!-- End #main -->
 
