@@ -1,0 +1,18 @@
+sudo apt update
+sudo apt install python3-venv python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+
+sudo -u postgres psql
+
+CREATE DATABASE portafolio_db;
+
+CREATE USER portafoliouser WITH PASSWORD 'rAsi2yX*22$';
+
+ALTER ROLE portafoliouser SET client_encoding TO 'utf8';
+ALTER ROLE portafoliouser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE portafoliouser SET timezone TO 'UTC';
+
+GRANT ALL PRIVILEGES ON DATABASE portafolio_db TO portafoliouser;
+
+
+mkdir ~/myprojectdir
+cd ~/myprojectdir

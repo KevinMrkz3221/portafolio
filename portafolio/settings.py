@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'blog',
     'projects',
     'services',
-    'testimonials'
-
 ]
 
 MIDDLEWARE = [
@@ -87,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'portafolio_db',
         'USER': 'portafoliouser',
-        'PASSWORD': 'portafolio',
+        'PASSWORD': 'rAsi2yX*22$',
         'HOST': 'localhost',
         'PORT': '',
     }
